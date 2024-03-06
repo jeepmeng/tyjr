@@ -1,0 +1,18 @@
+from pymilvus import connections, db
+m_cont = connections.connect(
+  alias="default",
+  user="root",
+  password="xtjc@CC1234!",
+  host="172.19.16.103",
+  port="22",
+  uri="http://172.16.19.103:19530",
+
+  # token="root:xtjc@CC1234!",
+
+)
+from pymilvus import utility
+has = utility.has_collection("hello_milvus")
+print(f"Does collection hello_milvus exist in Milvus: {has}")
+
+# utility.drop_collection("hello_milvus")
+
