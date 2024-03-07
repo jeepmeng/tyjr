@@ -1,4 +1,7 @@
-from pymilvus import connections, db
+# from pymilvus import connections, db
+from milvus_utils import *
+
+
 m_cont = connections.connect(
   alias="default",
   user="root",
@@ -10,9 +13,10 @@ m_cont = connections.connect(
   # token="root:xtjc@CC1234!",
 
 )
-from pymilvus import utility
-has = utility.has_collection("hello_milvus")
-print(f"Does collection hello_milvus exist in Milvus: {has}")
-
+# from pymilvus import utility
+# has = utility.has_collection("hello_milvus")
+# print(f"Does collection hello_milvus exist in Milvus: {has}")
+collection = connect_milvus()
+collection.release()
 # utility.drop_collection("hello_milvus")
 
