@@ -1,6 +1,18 @@
 import os
+import PIL
 
 pth = r'/Users/liufucong/Downloads/yolov5-7.0'
-dir = os.walk(pth)
-for i in dir:
-    print(i[-1])
+
+
+def get_img_pth(root_pth,):
+    pth_list = list()
+    for i in os.walk(root_pth):
+        for k in i[-1]:
+            if '.jpg' in k:
+                pth_list.append(os.path.join(i[0],k))
+    return pth_list
+
+
+
+if __name__ == "__main__":
+    print(get_img_pth(pth))
