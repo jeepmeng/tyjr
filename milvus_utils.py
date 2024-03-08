@@ -29,5 +29,5 @@ def connect_milvus(coll_name="face_collection",dim=128):
 
 
 def extract_features_to_milvus(collection,id,vector):
-    collection.insert([id, vector])
+    collection.insert([[id], vector])
     collection.flush()

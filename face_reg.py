@@ -27,7 +27,7 @@ import argparse
 
 
 class yolov5():
-    def __init__(self, yolo_type='yolov5l', confThreshold=0.3, nmsThreshold=0.5, objThreshold=0.2):
+    def __init__(self, yolo_type='yolov5s', confThreshold=0.3, nmsThreshold=0.5, objThreshold=0.2):
         anchors = [[4, 5, 8, 10, 13, 16], [23, 29, 43, 55, 73, 105], [146, 217, 231, 300, 335, 433]]
         num_classes = 1
         self.nl = len(anchors)
