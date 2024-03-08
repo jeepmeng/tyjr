@@ -1,4 +1,4 @@
-
+from test_walk import *
 from milvus_utils import *
 # from pymilvus import list_collections
 
@@ -25,13 +25,32 @@ collection.create_index("face_embeddings", index)
 collection.load()
 
 # result = collection.query(...)
-res = collection.query(
-  expr ='face_id in ["220104198807260013","caocheng"]',
-  # offset = 0,
-  # limit = 10,
-  # output_fields = ["face_embeddings",'face_id'],
-output_fields = ['*'],
-)
+# res = collection.query(
+#   expr ='face_id in [*]',
+#   # offset = 0,
+#   # limit = 10,
+#   # output_fields = ["face_embeddings",'face_id'],
+# output_fields = ['*'],
+# )
+#
+# for i in res:
+#     print(i)
 
+
+
+res = collection.query(
+  expr="",
+    limit = 100,
+  output_fields = ['*'],
+)
 for i in res:
+    print(i)
+# print(res[0])
+
+
+test_root_pth = r'/Users/liufucong/Downloads/公司人脸'
+#获取所有图片路径
+pth_list = get_img_pth(test_root_pth)
+print(len(pth_list))
+for i in pth_list:
     print(i)
