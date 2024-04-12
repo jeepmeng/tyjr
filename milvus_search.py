@@ -23,9 +23,9 @@ class m_serrch():
             alias="default",
             user="root",
             password="xtjc@CC1234!",
-            host="172.19.16.103",
+            host="172.19.16.100",
             port="22",
-            uri="http://172.16.19.103:19530"
+            uri="http://172.16.19.100:19530"
         )
         # has = utility.has_collection("face_collection")
         # if has:
@@ -43,7 +43,7 @@ class m_serrch():
     def face_search(self,face_img):
 
         # face_img = cv2.imread(r'/Users/liufucong/Downloads/公司人脸/220104198807260013.jpg')
-        if any(face_img):
+        if face_img.any():
 
             locations = self.yolonet.detect(face_img)
             locations = postprocess(face_img.shape[0], face_img.shape[1], locations)
@@ -153,6 +153,7 @@ if __name__ == "__main__":
     test_root_pth = r'/Users/liufucong/Downloads/公司人脸'
     # 获取所有图片路径
     pth_list = get_img_pth(test_root_pth)
+    print(pth_list)
     new_search = m_serrch()
     # print(len(pth_list))
     for i in pth_list:

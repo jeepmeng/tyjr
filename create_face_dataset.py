@@ -24,9 +24,9 @@ m_cont = connections.connect(
   alias="default",
   user="root",
   password="xtjc@CC1234!",
-  host="172.19.16.103",
+  host="172.19.16.100",
   port="22",
-  uri="http://172.16.19.103:19530",
+  uri="http://172.16.19.100:19530",
 
   # token="root:xtjc@CC1234!",
 

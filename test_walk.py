@@ -16,4 +16,4 @@ def get_img_pth(root_pth,):
 
 
 if __name__ == "__main__":
-    print(get_img_pth(r'/Users/liufucong/Downloads/公司人脸'))
+    print(get_img_pth(r'/Users/liufucong/Downloads/tyjr_test'))
